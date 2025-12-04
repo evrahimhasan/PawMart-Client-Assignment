@@ -11,6 +11,7 @@ import PetsDetails from "../pages/ListingDetails";
 import AddListing from "../pages/AddListing";
 import ListingDetails from "../pages/ListingDetails";
 import MyListings from "../pages/MyListings";
+import UpdateListing from "../pages/UpdateListing";
 
 
 
@@ -56,6 +57,11 @@ export const router = createBrowserRouter([
             {
                 path: '/my-listings',
                 element: <MyListings></MyListings>
+
+            },
+            {
+                path: '/update-listings/:id',
+                element: <UpdateListing></UpdateListing>
 
             }
         ]

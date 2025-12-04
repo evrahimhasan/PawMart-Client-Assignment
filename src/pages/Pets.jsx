@@ -7,7 +7,7 @@ const Pets = () => {
     const [category, setCategory] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:3000/services?category=${category}`)
+        fetch(`http://localhost:3000/listings?category=${category}`)
             .then(res => res.json())
             .then(data => setListings(data));
         console.log('emran');
@@ -43,7 +43,7 @@ const Pets = () => {
                             <p className="text-green-600 font-medium">${listing.price}</p>
                             <p className="text-yellow-500">Date: {listing.date}</p>
                             <Link
-                                to={`/plants/${listing?._id}`}
+                                to={`/pets-details/${listing?._id}`}
                                 className="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
                             >
                                 View Details
