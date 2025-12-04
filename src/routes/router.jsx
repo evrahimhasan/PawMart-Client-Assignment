@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
                 element: <SignUp></SignUp>
             },
             {
-                path: '/plants/:plantId',
+                path: '/pets-details/:id',
                 element: <PriviteRoute>
                     <PetsDetails></PetsDetails>
                 </PriviteRoute>
