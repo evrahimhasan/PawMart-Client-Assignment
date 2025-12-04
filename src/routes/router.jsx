@@ -7,8 +7,9 @@ import MyProfile from "../pages/MyProfile";
 import PriviteRoute from "../provider/PriviteRoute";
 import Error from "../components/Error";
 import Pets from "../pages/Pets";
-import PetsDetails from "../pages/PetsDetails";
+import PetsDetails from "../pages/ListingDetails";
 import AddListing from "../pages/AddListing";
+import ListingDetails from "../pages/ListingDetails";
 
 
 
@@ -37,7 +38,7 @@ export const router = createBrowserRouter([
             {
                 path: '/pets-details/:id',
                 element: <PriviteRoute>
-                    <PetsDetails></PetsDetails>
+                    <ListingDetails></ListingDetails>
                 </PriviteRoute>
             },
             {
