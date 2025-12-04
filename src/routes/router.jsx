@@ -8,6 +8,7 @@ import PriviteRoute from "../provider/PriviteRoute";
 import Error from "../components/Error";
 import Pets from "../pages/Pets";
 import PetsDetails from "../pages/PetsDetails";
+import AddListing from "../pages/AddListing";
 
 
 
@@ -45,6 +46,11 @@ export const router = createBrowserRouter([
                     <MyProfile></MyProfile>
                 </PriviteRoute>
             },
+            {
+                path: '/add-listing',
+                element: <AddListing></AddListing>
+                
+            }
         ]
     },
     {
