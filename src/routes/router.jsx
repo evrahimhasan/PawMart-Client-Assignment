@@ -10,6 +10,7 @@ import Pets from "../pages/Pets";
 import PetsDetails from "../pages/ListingDetails";
 import AddListing from "../pages/AddListing";
 import ListingDetails from "../pages/ListingDetails";
+import MyListings from "../pages/MyListings";
 
 
 
@@ -50,7 +51,12 @@ export const router = createBrowserRouter([
             {
                 path: '/add-listing',
                 element: <AddListing></AddListing>
-                
+
+            },
+            {
+                path: '/my-listings',
+                element: <MyListings></MyListings>
+
             }
         ]
     },
