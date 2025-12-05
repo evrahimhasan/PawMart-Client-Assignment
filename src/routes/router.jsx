@@ -7,11 +7,11 @@ import MyProfile from "../pages/MyProfile";
 import PriviteRoute from "../provider/PriviteRoute";
 import Error from "../components/Error";
 import Pets from "../pages/Pets";
-import PetsDetails from "../pages/ListingDetails";
 import AddListing from "../pages/AddListing";
 import ListingDetails from "../pages/ListingDetails";
 import MyListings from "../pages/MyListings";
 import UpdateListing from "../pages/UpdateListing";
+import MyOrders from "../pages/MyOrders";
 
 
 
@@ -67,6 +67,13 @@ export const router = createBrowserRouter([
                 path: '/update-listings/:id',
                 element: <PriviteRoute>
                     <UpdateListing></UpdateListing>
+                </PriviteRoute>
+
+            },
+            {
+                path: '/my-orders',
+                element: <PriviteRoute>
+                    <MyOrders></MyOrders>
                 </PriviteRoute>
 
             }

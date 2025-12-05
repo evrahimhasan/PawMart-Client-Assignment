@@ -34,6 +34,8 @@ const Navbar = () => {
                                 "text-green-500 underline" : ""}>Add Listing</NavLink>
                             <NavLink to="my-listings" className={({ isActive }) => isActive ?
                                 "text-green-500 underline" : ""}>My Listings</NavLink>
+                            <NavLink to="my-orders" className={({ isActive }) => isActive ?
+                                "text-green-500 underline" : ""}>My Orders</NavLink>
                         </>
                     )
                 }
