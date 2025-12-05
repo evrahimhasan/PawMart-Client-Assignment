@@ -27,7 +27,9 @@ const Pets = () => {
                 <option value="Care Products">Care Products</option>
             </select>
             <section className="text-center">
-                <h2 className="text-3xl font-bold text-green-700 mb-6">Top Rated Indoor Plants</h2>
+                <h2 className="text-3xl font-bold mb-8 text-center">
+                    Pets & <span className="text-orange-600">Supplies Page</span>
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {listings.map((listing) => (
                         <div
@@ -53,7 +55,8 @@ const Pets = () => {
                             </div>
                             <Link
                                 to={`/pets-details/${listing?._id}`}
-                                className="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+                                className="mt-3 inline-block bg-gradient-to-r from-orange-600 to-orange-800 
+                                text-white px-4 py-2 rounded-lg hover:bg-green-700"
                             >
                                 View Details
                             </Link>

@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { FaPaw } from 'react-icons/fa';
 
 const Navbar = () => {
     const { user, logOut } = use(AuthContext)
@@ -19,8 +20,9 @@ const Navbar = () => {
     return (
         <div className="flex flex-col gap-3 md:flex-row justify-between items-center">
             {/* <div className=''>{user && user.email}</div> */}
-            <div className=''>
-                <h1 className='text-green-600 font-extrabold text-2xl'>PawMart</h1>
+            <div className="flex items-center gap-2 mb-3">
+                <FaPaw className="text-3xl text-yellow-400" />
+                <h2 className="text-2xl text-orange-900 font-bold tracking-wide">PawMart</h2>
             </div>
             <div className="nav flex gap-5">
                 <NavLink to="/" className={({ isActive }) => isActive ?

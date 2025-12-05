@@ -70,7 +70,7 @@ const ListingDetails = () => {
                     <img
                         src={listing.image}
                         alt={listing.name}
-                        className="rounded-xl shadow-lg w-full object-cover"
+                        className="rounded-xl shadow-lg w-full h-[400px] object-cover"
                     />
                 </div>
 
@@ -99,7 +99,10 @@ const ListingDetails = () => {
 
                 </div>
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
-                <button className="btn" onClick={() => document.getElementById('my_modal_3').showModal()}>Adopt / Order Now</button>
+                <div className="lg:mt-6 lg:col-span-2 lg:flex lg:justify-center">
+                    <button className="btn bg-gradient-to-r from-orange-600 to-orange-800 py-3 px-4 text-[16px] text-white"
+                        onClick={() => document.getElementById('my_modal_3').showModal()}>Adopt / Order Now</button>
+                </div>
                 <dialog id="my_modal_3" className="modal">
                     <div className="modal-box">
                         <form method="dialog">
