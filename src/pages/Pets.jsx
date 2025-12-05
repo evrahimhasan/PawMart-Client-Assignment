@@ -41,14 +41,15 @@ const Pets = () => {
                                     alt=""
                                 />
                             </div>
-                            <h2 className="text-2xl font-bold">{listing.name}</h2>
-                            <div className="flex justify-between font-semibold mt-3 text-xl">
-                                <h1>Owner Name: {listing.date}</h1>
-                                <p>Price:{listing.price}</p>
-                            </div>
-                            <div className="flex gap-2 items-center ">
-                                <span className="text-green-500"></span>
-                                <h1 className="font-semibold mt-2 text"> {listing.location}</h1>
+                            <div className='px-6'>
+                                <div className="flex justify-between font-semibold mt-3 text-xl">
+                                    <h2 className="text-2xl font-bold">{listing.name}</h2>
+                                    <h1>{listing.category}</h1>
+                                </div>
+                                <div className="flex justify-between font-semibold mt-3 text-xl">
+                                    <p>Price:{listing.price}</p>
+                                    <h1 className="font-semibold text"> {listing.location}</h1>
+                                </div>
                             </div>
                             <Link
                                 to={`/pets-details/${listing?._id}`}

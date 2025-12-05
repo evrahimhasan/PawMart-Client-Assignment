@@ -12,7 +12,7 @@ const RecentListing = () => {
     console.log(listings);
     return (
         <section className="text-center">
-            <h2 className="text-3xl font-bold text-green-700 mb-6">Top Rated Indoor Plants</h2>
+            <h2 className="text-3xl font-bold text-green-700 mb-6">Recent Listings</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {listings.slice(0, 6).map((listing) => (
                     <div
@@ -26,14 +26,15 @@ const RecentListing = () => {
                                 alt=""
                             />
                         </div>
-                        <h2 className="text-2xl font-bold">{listing.name}</h2>
-                        <div className="flex justify-between font-semibold mt-3 text-xl">
-                            <h1>Owner Name: {listing.date}</h1>
-                            <p>Price:{listing.price}$</p>
-                        </div>
-                        <div className="flex gap-2 items-center ">
-                            <span className="text-green-500"></span>
-                            <h1 className="font-semibold mt-2 text"> {listing.location}</h1>
+                        <div className='px-6'>
+                            <div className="flex justify-between font-semibold mt-3 text-xl">
+                                <h2 className="text-2xl font-bold">{listing.name}</h2>
+                                <h1>{listing.category}</h1>
+                            </div>
+                            <div className="flex justify-between font-semibold mt-3 text-xl">
+                                <p>Price:{listing.price}</p>
+                                <h1 className="font-semibold text"> {listing.location}</h1>
+                            </div>
                         </div>
                         <Link
                             to={`/pets-details/${listing?._id}`}
