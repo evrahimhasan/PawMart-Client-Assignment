@@ -182,7 +182,8 @@ const ListingDetails = () => {
                             <label className="label">Date</label>
                             <input
                                 required
-                                type="date"
+                                defaultValue={new Date()}
+                                // type="date"
                                 name="date"
                                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                                 placeholder="Date" />

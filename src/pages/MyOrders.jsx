@@ -1,10 +1,81 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const MyOrders = () => {
+    const [myOrders, setMyOrders] = useState([])
+
+    useEffect(() => {
+        axios('http://localhost:3000/orders')
+            .then(res => {
+                setMyOrders(res.data)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }, []);
+
+    console.log(myOrders);
+
     return (
-        <div>
-            My Orders
-        </div>
+        <section className="py-16">
+            <div className="container mx-auto px-4">
+
+                <h2 className="text-3xl font-bold mb-8 text-center">
+                    My <span className="text-orange-600">Orders</span>
+                </h2>
+
+                <div className="overflow-x-auto shadow-lg rounded-xl">
+                    <table className="w-full text-left border-collapse bg-white">
+                        <thead className="bg-orange-600 text-white">
+                            <tr>
+                                <th className="p-4">Product Name</th>
+                                <th className="p-4">Buyer Name</th>
+                                <th className="p-4">Price</th>
+                                <th className="p-4">Quantity</th>
+                                <th className="p-4">Address</th>
+                                <th className="p-4">Date</th>
+                                <th className="p-4">Phone</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {myOrders.map((order) => (
+                                <tr
+                                    key={order._id}
+                                    className="border-b hover:bg-orange-100 transition"
+                                >
+                                    <td className="p-4 font-semibold">{order.productName}</td>
+                                    <td className="p-4">{order.buyerName}</td>
+                                    <td className="p-4">{order.price}</td>
+                                    <td className="p-4">{order.quantity}</td>
+                                    <td className="p-4">{order.address}</td>
+                                    <td className="p-4">
+                                        {new Date(order.date).toLocaleString("en-US", {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "2-digit",
+                                            hour: "2-digit",
+                                            minute: "2-digit",
+                                            hour12: true,
+                                        })}
+                                    </td>
+                                    <td className="p-4">{order.phone}</td>
+                                </tr>
+                            ))}
+
+                            {/* {orders?.length === 0 && (
+                                <tr>
+                                    <td colSpan="7" className="p-6 text-center text-gray-500">
+                                        No orders found.
+                                    </td>
+                                </tr>
+                            )} */}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
     );
 };
 
