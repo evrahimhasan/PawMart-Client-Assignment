@@ -1,5 +1,5 @@
 import React, { use, useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Loading from './Loading';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
@@ -8,6 +8,7 @@ const ListingDetails = () => {
     const { id } = useParams();
     const [listing, setListing] = useState(null);
     const { user } = use(AuthContext)
+    const navigate = useNavigate()
     // console.log(plantId);
 
     useEffect(() => {
@@ -50,6 +51,7 @@ const ListingDetails = () => {
         axios.post('http://localhost:3000/orders', formData)
             .then(res => {
                 console.log(res);
+                navigate("/my-orders")
             })
             .catch(error => {
                 console.log(error);
