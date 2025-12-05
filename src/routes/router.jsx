@@ -51,17 +51,23 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/add-listing',
-                element: <AddListing></AddListing>
+                element: <PriviteRoute>
+                    <AddListing></AddListing>
+                </PriviteRoute>
 
             },
             {
                 path: '/my-listings',
-                element: <MyListings></MyListings>
+                element: <PriviteRoute>
+                    <MyListings></MyListings>
+                </PriviteRoute>
 
             },
             {
                 path: '/update-listings/:id',
-                element: <UpdateListing></UpdateListing>
+                element: <PriviteRoute>
+                    <UpdateListing></UpdateListing>
+                </PriviteRoute>
 
             }
         ]

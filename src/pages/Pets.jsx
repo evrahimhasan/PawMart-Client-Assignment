@@ -32,8 +32,7 @@ const Pets = () => {
                     {listings.map((listing) => (
                         <div
                             key={listing._id}
-                            className='rounded-2xl p-4 shadow hover:shadow-lg transition bg-white duration-300 ease-out 
-                                                hover:translate-y-3 hover:scale-[1.03]'
+                            className='bg-[#fef9f5] p-6 rounded-xl shadow-md hover:-translate-y-2 transition'
                         >
                             <div className="mb-5">
                                 <img

@@ -17,8 +17,7 @@ const RecentListing = () => {
                 {listings.slice(0, 6).map((listing) => (
                     <div
                         key={listing._id}
-                        className='rounded-2xl p-4 shadow hover:shadow-lg transition bg-white duration-300 ease-out 
-                        hover:translate-y-3 hover:scale-[1.03]'
+                        className='bg-[#fef9f5] p-6 rounded-xl shadow-md hover:-translate-y-2 transition'
                     >
                         <div className="mb-5">
                             <img
@@ -46,7 +45,7 @@ const RecentListing = () => {
                 ))}
             </div>
             <div className='flex justify-center items-center mt-10'>
-                <Link to='/plants' className="btn bg-gradient-to-r from-green-600 to-green-800 
+                <Link to='/pets' className="btn bg-gradient-to-r from-green-600 to-green-800 
                 py-3 px-4 text-[16px] text-white">Show All</Link>
             </div>
         </section>

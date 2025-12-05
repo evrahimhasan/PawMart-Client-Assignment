@@ -27,10 +27,16 @@ const Navbar = () => {
                     "text-green-500 underline" : ""}>Home</NavLink>
                 <NavLink to="/pets" className={({ isActive }) => isActive ?
                     "text-green-500 underline" : ""}>Pets & Supplies</NavLink>
-                <NavLink to="add-listing" className={({ isActive }) => isActive ?
-                    "text-green-500 underline" : ""}>Add Listing</NavLink>
-                <NavLink to="my-listings" className={({ isActive }) => isActive ?
-                    "text-green-500 underline" : ""}>My Listings</NavLink>
+                {
+                    user && (
+                        <>
+                            <NavLink to="add-listing" className={({ isActive }) => isActive ?
+                                "text-green-500 underline" : ""}>Add Listing</NavLink>
+                            <NavLink to="my-listings" className={({ isActive }) => isActive ?
+                                "text-green-500 underline" : ""}>My Listings</NavLink>
+                        </>
+                    )
+                }
 
             </div>
 
