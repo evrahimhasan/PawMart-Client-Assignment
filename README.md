@@ -1,22 +1,41 @@
 
-# [Live Link](https://gentle-chaja-fbdfee.netlify.app/)
+# [Server Live Link]()
+# [Client Live Link]()
 
 
-Project Name: **GreenNest**
+Project Name: **PawMart**
 
 
 Description:
-GreenNest is single-page React web application and it's also responsive for all the device (Mobile,Tab,Laptop). It's designed for plant lovers who want to bring nature indoors. It allows users to explore beautiful indoor plants and learn care tips.
+PawMart is a modern pet adoption and supply platform where users can browse pets, purchase pet products, and manage their own listings.
+The platform includes secure authentication, filtering, dynamic routing and order management — all wrapped in a clean and responsive UI designed for the best user experience.
 
 
 Technologies Used:
 
-React, 
+Frontend-->
+
+{ React, 
 React-router
 React Router DOM, 
 TailwindCSS, 
 DaisyUI,
-Firebase,
 React-toastify,
 React-icons,
 Swiper,
+SweetAlert2,
+Axios }
+
+
+Backend-->
+
+{ Node.js,
+Express.js,
+MongoDB,
+CORS,
+dotenv }
+
+
+Authentication-->
+
+{ Firebase Auth (Email/Password + Google Login) }
