@@ -122,7 +122,7 @@ const AddListing = () => {
 
                     {/* Date pick up */}
                     <div>
-                        <label className="label font-medium">Price</label>
+                        <label className="label font-medium">Date</label>
                         <input
                             type="date"
                             name="date"

@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Loading from './Loading';
 import { AuthContext } from '../provider/AuthProvider';
+import axios from 'axios';
 
 const ListingDetails = () => {
     const { id } = useParams();
@@ -17,6 +18,45 @@ const ListingDetails = () => {
 
             });
     }, [id]);
+
+    const handleOrder = (e) => {
+        e.preventDefault()
+        const form = e.target;
+
+        const buyerName = form.buyerName.value;
+        const email = form.email.value;
+        const productId = form.productId.value;
+        const productName = form.productName.value;
+        const quantity = parseInt(form.quantity.value);
+        const price = parseInt(form.price.value);
+        const address = form.address.value;
+        const date = form.date.value
+        const phone = form.phone.value;
+        const aditionalNotes = form.aditionalNotes.value;
+
+        const formData = {
+            buyerName,
+            email,
+            productId,
+            productName,
+            quantity,
+            price,
+            address,
+            date,
+            phone,
+            aditionalNotes
+
+        }
+        axios.post('http://localhost:3000/orders', formData)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+
+    }
 
     if (!listing) return <Loading></Loading>
 
@@ -66,57 +106,102 @@ const ListingDetails = () => {
                             {/* if there is a button in form, it will close the modal */}
                             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                         </form>
-                        <form className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
+                        <form onSubmit={handleOrder} className="fieldset bg-base-200 border-base-300 
+                        rounded-box w-full border p-4">
                             <legend className="fieldset-legend">Order Details</legend>
 
+                            {/* Buyer Name */}
                             <label className="label">Buyer Name</label>
                             <input
                                 readOnly
                                 defaultValue={user.displayName}
-                                type="text" className="input"
+                                type="text"
+                                name="buyerName"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                                 placeholder="Buyer Name" />
 
+                            {/* Email */}
                             <label className="label">Email</label>
                             <input
                                 readOnly
                                 defaultValue={user.email}
                                 type="email"
-                                className="input"
+                                name="email"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                                 placeholder="Email" />
 
+                            {/* Product/Listing ID */}
                             <label className="label">Product/Listing ID</label>
                             <input
                                 readOnly
                                 defaultValue={id}
                                 type="text"
-                                className="input"
+                                name="productId"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                                 placeholder="Product/Listing ID" />
 
+                            {/* Product/Listing Name */}
                             <label className="label">Product/Listing Name</label>
                             <input
                                 readOnly
                                 defaultValue={listing.name}
-                                type="text" className="input"
+                                type="text"
+                                name="productName"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                                 placeholder="Product/Listing Name" />
 
+                            {/* Quantity */}
                             <label className="label">Quantity</label>
-                            <input type="number" className="input" placeholder="Quantity" />
+                            <input
+                                required
+                                type="number"
+                                name="quantity"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                                placeholder="Quantity" />
 
+                            {/* Price */}
                             <label className="label">Price</label>
                             <input
                                 readOnly
                                 defaultValue={listing.price}
-                                type="number" className="input"
+                                type="number"
+                                name="price"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                                 placeholder="Price" />
 
+                            {/* Address */}
                             <label className="label">Address</label>
-                            <input type="text" className="input" placeholder="Address" />
+                            <input
+                                required
+                                type="text"
+                                name="address"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                                placeholder="Address" />
 
+                            {/* Date */}
+                            <label className="label">Date</label>
+                            <input
+                                required
+                                type="date"
+                                name="date"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                                placeholder="Date" />
+
+                            {/* Phone */}
                             <label className="label">Phone</label>
-                            <input type="text" className="input" placeholder="Phone" />
+                            <input
+                                required
+                                type="text"
+                                name="phone"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                                placeholder="Phone" />
 
+                            {/* Additional Notes */}
                             <label className="label">Additional Notes</label>
-                            <textarea type="text" className="input" placeholder="Additional Notes" />
+                            <textarea type="text"
+                                name="aditionalNotes"
+                                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                                placeholder="Additional Notes" />
 
                             <button className="btn btn-primary">Order</button>
                         </form>
