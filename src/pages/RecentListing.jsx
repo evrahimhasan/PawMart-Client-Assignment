@@ -32,8 +32,6 @@ const RecentListing = () => {
                             <h1>Owner Name: {listing.date}</h1>
                             <p>Price:{listing.price}$</p>
                         </div>
-                        {/* <p className="text-green-600 font-medium">${listing.price}</p>
-                        <p className="text-yellow-500">Date: {listing.date}</p> */}
                         <div className="flex gap-2 items-center ">
                             <span className="text-green-500"></span>
                             <h1 className="font-semibold mt-2 text"> {listing.location}</h1>
