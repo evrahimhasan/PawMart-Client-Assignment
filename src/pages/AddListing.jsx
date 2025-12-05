@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddListing = () => {
     const { user } = use(AuthContext);
@@ -32,6 +33,12 @@ const AddListing = () => {
         axios.post('http://localhost:3000/listings', formData)
             .then(res => {
                 console.log(res);
+                Swal.fire({
+                    title: "Listing created succesfully",
+                    icon: "success",
+                    draggable: true
+                });
+                form.reset()
             })
             .catch(error => {
                 console.log(error);
@@ -40,7 +47,9 @@ const AddListing = () => {
     return (
         <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
             <div className="card-body p-6 relative">
-                <h2 className="text-2xl font-bold text-center mb-6">Create Listing</h2>
+                <h2 className="text-3xl font-bold mb-8 text-center">
+                    Create <span className="text-orange-600">Listing</span>
+                </h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Name Field */}
                     <div>

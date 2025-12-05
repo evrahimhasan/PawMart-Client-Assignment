@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate, useParams } from 'react-router';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const UpdateListing = () => {
     const { user } = use(AuthContext);
@@ -48,6 +49,11 @@ const UpdateListing = () => {
         axios.put(`http://localhost:3000/update/${id}`, updatedFormData)
             .then(res => {
                 console.log(res);
+                Swal.fire({
+                    title: "Listing updated succesfully",
+                    icon: "success",
+                    draggable: true
+                });
                 navigation('/my-listings')
             })
             .catch(error => {
@@ -57,7 +63,9 @@ const UpdateListing = () => {
     return (
         <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
             <div className="card-body p-6 relative">
-                <h2 className="text-2xl font-bold text-center mb-6">Update Service</h2>
+                <h2 className="text-3xl font-bold mb-8 text-center">
+                    Update <span className="text-orange-600">Listing</span>
+                </h2>
                 <form onSubmit={handleUpdate} className="space-y-4">
                     {/* Name Field */}
                     <div>

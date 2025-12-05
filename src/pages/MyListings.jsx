@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router';
+import Swal from 'sweetalert2';
 
 const MyListings = () => {
     const [myListings, setMyListings] = useState([]);
@@ -17,16 +18,37 @@ const MyListings = () => {
     console.log(myListings);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/delete/${id}`)
-            .then(res => {
-                console.log(res.data);
-                const filteredData = myListings.filter(listing => listing._id != id)
-                console.log(filteredData)
-                setMyListings(filteredData)
-            })
-            .catch(error => {
-                console.log(error);
-            })
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                axios.delete(`http://localhost:3000/delete/${id}`)
+                    .then(res => {
+                        console.log(res.data);
+                        const filteredData = myListings.filter(listing => listing._id != id)
+                        console.log(filteredData)
+                        setMyListings(filteredData)
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your listing has been deleted.",
+                            icon: "success"
+                        });
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+
+            }
+        });
+
     }
     return (
         <div>
