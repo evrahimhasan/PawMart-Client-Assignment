@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
+import Loading from './Loading';
 
 
 const Pets = () => {
     const [listings, setListings] = useState([]);
     const [category, setCategory] = useState('');
+    const [loading, setLoading] = useState(true);
+    const location = useLocation()
 
     useEffect(() => {
+        setLoading(true)
         fetch(`http://localhost:3000/listings?category=${category}`)
             .then(res => res.json())
             .then(data => setListings(data));
-        console.log('emran');
-    }, [category]);
+        setLoading(false)
+        // console.log('emran');
+    }, [category, location.pathname]);
 
-    console.log(category);
+    // console.log(category);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div className="space-y-12">
             <select onChange={(e) => setCategory(e.target.value)} defaultValue="Chose category" className="select">

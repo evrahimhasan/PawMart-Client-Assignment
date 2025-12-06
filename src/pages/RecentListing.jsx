@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import Loading from './Loading';
 
 const RecentListing = () => {
     const [listings, setListings] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        setLoading(true)
         fetch('http://localhost:3000/recent-listings')
             .then(res => res.json())
             .then(data => setListings(data));
+        setLoading(false)
     }, []);
-    console.log(listings);
+    // console.log(listings);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <section className="text-center">
             <h2 className="text-3xl font-bold text-green-700 mb-6">Recent Listings</h2>

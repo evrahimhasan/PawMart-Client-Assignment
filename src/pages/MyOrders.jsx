@@ -2,21 +2,27 @@ import axios from 'axios';
 import jsPDF from 'jspdf';
 import { autoTable } from 'jspdf-autotable'
 import React, { useEffect, useState } from 'react';
+import Loading from './Loading';
+
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([])
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true)
         axios('http://localhost:3000/orders')
             .then(res => {
                 setMyOrders(res.data)
+                setLoading(false)
             })
             .catch(error => {
+                setLoading(false)
                 console.log(error);
             })
     }, []);
 
-    console.log(myOrders);
+    // console.log(myOrders);
 
     // pdf download
 
@@ -62,7 +68,7 @@ const MyOrders = () => {
         });
 
         // AutoTable
-        autoTable(doc,{
+        autoTable(doc, {
             head: [tableColumn],
             body: tableRows,
             startY: 25,
@@ -71,6 +77,9 @@ const MyOrders = () => {
         doc.save("MyOrdersReport.pdf");
     };
 
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <section className="py-16">
@@ -82,9 +91,9 @@ const MyOrders = () => {
                 {/* Download Button */}
                 <button
                     onClick={downloadPDF}
-                    className="bg-orange-600 text-white px-5 py-2 rounded-lg shadow hover:bg-orange-700"
+                    className="bg-orange-600 text-white px-5 py-2 rounded-lg shadow hover:bg-orange-700 mb-4"
                 >
-                    ⬇ Download Report
+                    Download Order
                 </button>
 
 

@@ -3,19 +3,28 @@ import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
+import Loading from './Loading';
 
 const MyListings = () => {
     const [myListings, setMyListings] = useState([]);
     const { user } = use(AuthContext)
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true)
         fetch(`http://localhost:3000/my-listings?email=${user?.email}`)
             .then(res => res.json())
-            .then(data => setMyListings(data))
-            .catch(error => console.log(error))
+            .then(data => {
+                setMyListings(data)
+                setLoading(false)
+            })
+            .catch(error => {
+                console.log(error)
+                setLoading(false)
+            })
     }, [user?.email]);
 
-    console.log(myListings);
+    // console.log(myListings);
 
     const handleDelete = (id) => {
 
@@ -50,6 +59,11 @@ const MyListings = () => {
         });
 
     }
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     return (
         <section className="py-16">
             <div className="container mx-auto px-4">

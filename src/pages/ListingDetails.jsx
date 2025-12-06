@@ -9,15 +9,22 @@ const ListingDetails = () => {
     const [listing, setListing] = useState(null);
     const { user } = use(AuthContext)
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(true)
     // console.log(plantId);
 
     useEffect(() => {
+        setLoading(true)
         fetch(`http://localhost:3000/listings/${id}`)
             .then(res => res.json())
             .then(data => {
                 setListing(data)
+                setLoading(false)
 
-            });
+            })
+            .catch(error => {
+                console.log(error);
+                setLoading(false)
+            })
     }, [id]);
 
     const handleOrder = (e) => {
@@ -60,7 +67,10 @@ const ListingDetails = () => {
 
     }
 
-    if (!listing) return <Loading></Loading>
+    // if (!listing) return <Loading></Loading>
+    if (loading) {
+        return <Loading></Loading>
+    }
 
 
     return (
