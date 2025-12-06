@@ -1,7 +1,7 @@
 
-# [Server Live Link](https://hilarious-unicorn-e9a47f.netlify.app/)
-# [Client Live Link](https://paw-mart-server-pi.vercel.app/)
-# [Client Github repo Link](https://github.com/evrahimhasan/PawMart-Server.git)
+# [Client Live Link](https://hilarious-unicorn-e9a47f.netlify.app/)
+# [Server Live Link](https://paw-mart-server-pi.vercel.app/)
+# [Server Github repo Link](https://github.com/evrahimhasan/PawMart-Server.git)
 
 
 Project Name: **PawMart**
