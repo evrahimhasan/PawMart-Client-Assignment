@@ -98,7 +98,7 @@ const MyOrders = () => {
 
 
                 <div className="overflow-x-auto shadow-lg rounded-xl">
-                    <table className="w-full text-left border-collapse bg-white">
+                    <table className="w-full text-left border-collapse">
                         <thead className="bg-orange-600 text-white">
                             <tr>
                                 <th className="p-4">Product Name</th>
@@ -115,7 +115,7 @@ const MyOrders = () => {
                             {myOrders.map((order) => (
                                 <tr
                                     key={order._id}
-                                    className="border-b hover:bg-orange-100 transition"
+                                    className="border-b hover:bg-orange-100 hover:text-black transition"
                                 >
                                     <td className="p-4 font-semibold">{order.productName}</td>
                                     <td className="p-4">{order.buyerName}</td>

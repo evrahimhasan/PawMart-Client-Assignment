@@ -28,7 +28,7 @@ const PetHeroes = () => {
         },
     ];
     return (
-        <section className="py-16 bg-white">
+        <section className="py-16">
             <div className="container mx-auto px-4 text-center">
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -45,7 +45,7 @@ const PetHeroes = () => {
                     {heroes.map((hero, index) => (
                         <div
                             key={index}
-                            className="bg-[#fef9f5] p-6 rounded-xl shadow-md hover:-translate-y-2 transition"
+                            className="p-6 rounded-xl shadow-md hover:-translate-y-2 transition"
                         >
                             <img
                                 src={hero.img}

@@ -1,12 +1,26 @@
-import React, { use } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { FaPaw } from 'react-icons/fa';
-import MyProfile from '../pages/MyProfile';
 
 const Navbar = () => {
     const { user, logOut } = use(AuthContext)
+
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
+
+    useEffect(() => {
+        const html = document.querySelector('html')
+        html.setAttribute("data-theme", theme)
+        localStorage.setItem("theme", theme)
+    }, [theme])
+
+
+    const handleTheme = (checked) => {
+        setTheme(checked ? "dark" : "light")
+    }
+
+
     const handleLogout = () => {
         // console.log('user try to logout');
         logOut()
@@ -74,6 +88,19 @@ const Navbar = () => {
                                     <span className="font-semibold">
                                         <Link to='/myprofile'>Update Profile</Link>
                                     </span>
+                                </li>
+                                <li>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-sm font-medium">
+                                            Dark
+                                        </span>
+                                        <input
+                                            onChange={(e) => handleTheme(e.target.checked)}
+                                            type="checkbox"
+                                            defaultChecked={localStorage.getItem('theme') === "dark"}
+                                            className="toggle"
+                                        />
+                                    </div>
                                 </li>
                                 <li>
                                     <button onClick={handleLogout}>Logout</button>

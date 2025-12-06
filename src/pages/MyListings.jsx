@@ -75,10 +75,10 @@ const MyListings = () => {
                 {myListings.length === 0 ? (
                     <p className="text-gray-600">You have not added any listings yet.</p>
                 ) : (
-                    <div className="py-10 px-4 bg-gray-50 min-h-screen">
+                    <div className="py-10 px-4 min-h-screen">
 
                         <div className="overflow-x-auto">
-                            <table className="min-w-full bg-white rounded-xl shadow-lg overflow-hidden">
+                            <table className="min-w-full rounded-xl shadow-lg overflow-hidden">
                                 {/* Table Head */}
                                 <thead className="bg-orange-600 text-white">
                                     <tr>
@@ -94,7 +94,7 @@ const MyListings = () => {
                                     {myListings.map((listing) => (
                                         <tr
                                             key={listing._id}
-                                            className="hover:bg-gray-50 transition duration-200"
+                                            className="hover:bg-amber-50 hover:text-black transition duration-200"
                                         >
                                             {/* Name + Avatar */}
                                             <td className="py-4 px-6">
@@ -107,7 +107,7 @@ const MyListings = () => {
                                                         />
                                                     </div>
                                                     <div>
-                                                        <div className="font-semibold text-gray-800 text-lg">
+                                                        <div className="font-semibold text-lg">
                                                             {listing.name}
                                                         </div>
                                                     </div>
@@ -116,11 +116,11 @@ const MyListings = () => {
 
                                             {/* Description */}
                                             <td className="py-4 px-6">
-                                                <p className="text-gray-600 line-clamp-2">{listing.description}</p>
+                                                <p className="line-clamp-2">{listing.description}</p>
                                             </td>
 
                                             {/* Price */}
-                                            <td className="py-4 px-6 font-semibold text-gray-800">
+                                            <td className="py-4 px-6 font-semibold">
                                                 {listing.price === 0 ? "Free for Adoption" : `${listing.price}`}
                                             </td>
 

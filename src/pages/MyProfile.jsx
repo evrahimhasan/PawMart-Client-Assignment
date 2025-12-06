@@ -31,7 +31,7 @@ const MyProfile = () => {
 
     return (
         <form onSubmit={hendleUpdate}>
-            <div className='flex flex-col justify-center items-center bg-white shadow-2xl gap-5 mt-10'>
+            <div className='flex flex-col justify-center items-center shadow-2xl gap-5 mt-10'>
                 <div className='text-center p-5 text-black rounded-lg'>
                     <img className='w-[100px] h-[100px] rounded-full mx-auto ' src={photoURL} alt="" />
                     <h2 className='text-2xl font-bold mt-5 '>{displayName}</h2>
@@ -39,7 +39,7 @@ const MyProfile = () => {
 
                 </div>
                 <div className='flex justify-center items-center'>
-                    <div className='text-center p-5 text-black rounded-lg'>
+                    <div className='text-center p-5 rounded-lg'>
                         <div className='flex flex-col space-y-5'>
                             <input name='name' type="text" placeholder="Your Name" className="input input-success text-center" required />
                             <input name='photo' type="text" placeholder="Photo Url" className="input input-success text-center" required />

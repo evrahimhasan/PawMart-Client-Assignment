@@ -3,7 +3,7 @@ import { FaHeart, FaHome, FaPaw } from 'react-icons/fa';
 
 const WhyAdopt = () => {
     return (
-        <section className="py-16 bg-[#fef9f5]">
+        <section className="py-16">
             <div className="container mx-auto px-4 text-center">
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -17,7 +17,7 @@ const WhyAdopt = () => {
 
                 <div className="grid md:grid-cols-3 gap-10">
 
-                    <div className="bg-white shadow-lg p-6 rounded-xl hover:-translate-y-2 transition">
+                    <div className="shadow-lg p-6 rounded-xl hover:-translate-y-2 transition">
                         <FaHeart className="text-4xl text-red-500 mx-auto mb-4" />
                         <h3 className="text-xl font-semibold mb-2">Give Them a Second Chance</h3>
                         <p className="text-gray-600">
@@ -26,7 +26,7 @@ const WhyAdopt = () => {
                         </p>
                     </div>
 
-                    <div className="bg-white shadow-lg p-6 rounded-xl hover:-translate-y-2 transition">
+                    <div className="shadow-lg p-6 rounded-xl hover:-translate-y-2 transition">
                         <FaHome className="text-4xl text-yellow-500 mx-auto mb-4" />
                         <h3 className="text-xl font-semibold mb-2">Safe & Loving Homes</h3>
                         <p className="text-gray-600">
@@ -35,7 +35,7 @@ const WhyAdopt = () => {
                         </p>
                     </div>
 
-                    <div className="bg-white shadow-lg p-6 rounded-xl hover:-translate-y-2 transition">
+                    <div className="shadow-lg p-6 rounded-xl hover:-translate-y-2 transition">
                         <FaPaw className="text-4xl text-orange-500 mx-auto mb-4" />
                         <h3 className="text-xl font-semibold mb-2">Responsible Pet Ownership</h3>
                         <p className="text-gray-600">
