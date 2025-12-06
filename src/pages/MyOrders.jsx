@@ -1,17 +1,20 @@
 import axios from 'axios';
 import jsPDF from 'jspdf';
 import { autoTable } from 'jspdf-autotable'
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 import Loading from './Loading';
 
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([])
     const [loading, setLoading] = useState(true);
+    const { user } = use(AuthContext)
+
 
     useEffect(() => {
         setLoading(true)
-        axios('http://localhost:3000/orders')
+        axios(`http://localhost:3000/orders?email=${user.email}`)
             .then(res => {
                 setMyOrders(res.data)
                 setLoading(false)

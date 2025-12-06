@@ -6,7 +6,6 @@ import { FaPaw } from 'react-icons/fa';
 
 const Navbar = () => {
     const { user, logOut } = use(AuthContext)
-
     const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
 
     useEffect(() => {
@@ -41,18 +40,18 @@ const Navbar = () => {
             </div>
             <div className="nav flex gap-5">
                 <NavLink to="/" className={({ isActive }) => isActive ?
-                    "text-green-500 underline" : ""}>Home</NavLink>
+                    "text-orange-700 underline" : ""}>Home</NavLink>
                 <NavLink to="/pets" className={({ isActive }) => isActive ?
-                    "text-green-500 underline" : ""}>Pets & Supplies</NavLink>
+                    "text-orange-700 underline" : ""}>Pets & Supplies</NavLink>
                 {
                     user && (
                         <>
                             <NavLink to="add-listing" className={({ isActive }) => isActive ?
-                                "text-green-500 underline" : ""}>Add Listing</NavLink>
+                                "text-orange-700 underline" : ""}>Add Listing</NavLink>
                             <NavLink to="my-listings" className={({ isActive }) => isActive ?
-                                "text-green-500 underline" : ""}>My Listings</NavLink>
+                                "text-orange-700 underline" : ""}>My Listings</NavLink>
                             <NavLink to="my-orders" className={({ isActive }) => isActive ?
-                                "text-green-500 underline" : ""}>My Orders</NavLink>
+                                "text-orange-700 underline" : ""}>My Orders</NavLink>
                         </>
                     )
                 }

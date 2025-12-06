@@ -43,7 +43,7 @@ const MyListings = () => {
                     .then(res => {
                         console.log(res.data);
                         const filteredData = myListings.filter(listing => listing._id != id)
-                        console.log(filteredData)
+                        // console.log(filteredData)
                         setMyListings(filteredData)
                         Swal.fire({
                             title: "Deleted!",

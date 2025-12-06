@@ -28,7 +28,7 @@ const AddListing = () => {
             date,
             email
         }
-        console.log(formData);
+        // console.log(formData);
 
         axios.post('http://localhost:3000/listings', formData)
             .then(res => {

@@ -19,7 +19,7 @@ const UpdateListing = () => {
             })
     }, [id])
 
-    console.log(update);
+    // console.log(update);
 
     const handleUpdate = (e) => {
         e.preventDefault();
@@ -44,7 +44,7 @@ const UpdateListing = () => {
             email,
             createdAt: update.createdAt
         }
-        console.log(updatedFormData);
+        // console.log(updatedFormData);
 
         axios.put(`http://localhost:3000/update/${id}`, updatedFormData)
             .then(res => {
