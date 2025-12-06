@@ -7,6 +7,7 @@ const Pets = () => {
     const [listings, setListings] = useState([]);
     const [category, setCategory] = useState('');
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState("")
     const location = useLocation()
 
     useEffect(() => {
@@ -24,24 +25,37 @@ const Pets = () => {
         return <Loading></Loading>
     }
 
+
+    const filteredListings = listings.filter(listing => listing.name.toLowerCase().includes(search.toLowerCase()));
+
     return (
         <div className="space-y-12">
-            <select onChange={(e) => setCategory(e.target.value)} defaultValue="Chose category" className="select">
-                <option value="Chose category" disabled>
-                    Chose category
-                </option>
-                <option value="">All</option>
-                <option value="Pets">Pets</option>
-                <option value="Foods">Foods</option>
-                <option value="Accessories">Accessories</option>
-                <option value="Care Products">Care Products</option>
-            </select>
+            <div className='flex justify-between items-center'>
+                <select onChange={(e) => setCategory(e.target.value)} defaultValue="Chose category" className="select">
+                    <option value="Chose category" disabled>
+                        Chose category
+                    </option>
+                    <option value="">All</option>
+                    <option value="Pets">Pets</option>
+                    <option value="Foods">Foods</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Care Products">Care Products</option>
+                </select>
+
+                <input
+                    type="text"
+                    placeholder="Search by name..."
+                    className="input input-bordered"
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+            </div>
+
             <section className="text-center">
                 <h2 className="text-3xl font-bold mb-8 text-center">
                     Pets & <span className="text-orange-600">Supplies Page</span>
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {listings.map((listing) => (
+                    {filteredListings.map((listing) => (
                         <div
                             key={listing._id}
                             className='p-6 rounded-xl shadow-md hover:-translate-y-2 transition'
@@ -73,11 +87,12 @@ const Pets = () => {
                         </div>
                     ))}
                 </div>
+
+                {filteredListings.length === 0 && (
+                    <p className="text-2xl mt-6">No matching Pets or Supplies found.</p>
+                )}
+
             </section>
-
-
-
-
 
         </div>
     );
