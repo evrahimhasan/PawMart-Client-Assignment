@@ -14,7 +14,7 @@ const Banner = () => {
                         className="w-full h-[380px] object-cover"
                     />
 
-                    {/* Overlay */}
+
                     <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
                         <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
                             Find Your Furry Friend Today!
@@ -24,7 +24,6 @@ const Banner = () => {
                         </p>
                     </div>
 
-                    {/* Arrows */}
                     <div className="absolute left-5 right-5 top-1/2 flex justify-between -translate-y-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
