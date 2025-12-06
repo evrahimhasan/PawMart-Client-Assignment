@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { FaPaw } from 'react-icons/fa';
+import MyProfile from '../pages/MyProfile';
 
 const Navbar = () => {
     const { user, logOut } = use(AuthContext)
@@ -67,6 +68,11 @@ const Navbar = () => {
                                 <li>
                                     <span className="font-semibold">
                                         {user.displayName || user.email}
+                                    </span>
+                                </li>
+                                <li>
+                                    <span className="font-semibold">
+                                        <Link to='/myprofile'>Update Profile</Link>
                                     </span>
                                 </li>
                                 <li>
