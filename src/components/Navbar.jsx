@@ -38,7 +38,7 @@ const Navbar = () => {
                 <FaPaw className="text-3xl text-yellow-400" />
                 <h2 className="text-2xl text-orange-900 font-bold tracking-wide">PawMart</h2>
             </div>
-            <div className="nav flex gap-5">
+            <div className="nav flex flex-col md:flex-row gap-5 items-center">
                 <NavLink to="/" className={({ isActive }) => isActive ?
                     "text-orange-700 underline" : ""}>Home</NavLink>
                 <NavLink to="/pets" className={({ isActive }) => isActive ?

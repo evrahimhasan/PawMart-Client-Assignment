@@ -12,7 +12,7 @@ const MyListings = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:3000/my-listings?email=${user?.email}`)
+        fetch(`https://paw-mart-server-pi.vercel.app/my-listings?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyListings(data)
@@ -39,7 +39,7 @@ const MyListings = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:3000/delete/${id}`)
+                axios.delete(`https://paw-mart-server-pi.vercel.app/delete/${id}`)
                     .then(res => {
                         console.log(res.data);
                         const filteredData = myListings.filter(listing => listing._id != id)

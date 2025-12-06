@@ -12,7 +12,7 @@ const UpdateListing = () => {
     const navigation = useNavigate()
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/listings/${id}`)
+        axios.get(`https://paw-mart-server-pi.vercel.app/listings/${id}`)
             .then(res => {
                 setUpdate(res.data)
                 setCategory(res.data.category)
@@ -46,7 +46,7 @@ const UpdateListing = () => {
         }
         // console.log(updatedFormData);
 
-        axios.put(`http://localhost:3000/update/${id}`, updatedFormData)
+        axios.put(`https://paw-mart-server-pi.vercel.app/update/${id}`, updatedFormData)
             .then(res => {
                 console.log(res);
                 Swal.fire({

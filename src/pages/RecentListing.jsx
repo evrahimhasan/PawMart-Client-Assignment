@@ -8,7 +8,7 @@ const RecentListing = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:3000/recent-listings')
+        fetch('https://paw-mart-server-pi.vercel.app/recent-listings')
             .then(res => res.json())
             .then(data => setListings(data));
         setLoading(false)

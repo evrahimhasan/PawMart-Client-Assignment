@@ -12,7 +12,7 @@ const Pets = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:3000/listings?category=${category}`)
+        fetch(`https://paw-mart-server-pi.vercel.app/listings?category=${category}`)
             .then(res => res.json())
             .then(data => setListings(data));
         setLoading(false)

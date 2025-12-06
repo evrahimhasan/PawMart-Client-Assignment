@@ -30,7 +30,7 @@ const AddListing = () => {
         }
         // console.log(formData);
 
-        axios.post('http://localhost:3000/listings', formData)
+        axios.post('https://paw-mart-server-pi.vercel.app/listings', formData)
             .then(res => {
                 console.log(res);
                 Swal.fire({

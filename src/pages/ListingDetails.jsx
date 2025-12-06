@@ -14,7 +14,7 @@ const ListingDetails = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:3000/listings/${id}`)
+        fetch(`https://paw-mart-server-pi.vercel.app/listings/${id}`)
             .then(res => res.json())
             .then(data => {
                 setListing(data)
@@ -55,7 +55,7 @@ const ListingDetails = () => {
             aditionalNotes
 
         }
-        axios.post('http://localhost:3000/orders', formData)
+        axios.post('https://paw-mart-server-pi.vercel.app/orders', formData)
             .then(res => {
                 console.log(res);
                 navigate("/my-orders")
