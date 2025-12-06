@@ -1,6 +1,7 @@
 
-# [Server Live Link]()
-# [Client Live Link]()
+# [Server Live Link](https://hilarious-unicorn-e9a47f.netlify.app/)
+# [Client Live Link](https://paw-mart-server-pi.vercel.app/)
+# [Client Github repo Link](https://github.com/evrahimhasan/PawMart-Server.git)
 
 
 Project Name: **PawMart**
@@ -24,7 +25,9 @@ React-toastify,
 React-icons,
 Swiper,
 SweetAlert2,
-Axios }
+Axios,
+jspdf,
+jspdf-autotable }
 
 
 Backend-->
