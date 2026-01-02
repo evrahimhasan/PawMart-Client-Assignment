@@ -40,48 +40,61 @@ const Navbar = () => {
                 <h2 className="text-2xl text-orange-900 font-bold tracking-wide">PawMart</h2>
             </div>
             <div className="nav flex flex-col md:flex-row gap-5 items-center">
-                <NavLink to="/" className={({ isActive }) =>
-                    `px-3 py-1 rounded-md transition ${isActive
-                        ? "text-orange-700 underline font-semibold"
-                        : "hover:text-orange-600"
-                    }`
-                }>Home</NavLink>
+                <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                        `px-3 py-1 rounded-md transition font-medium
+         ${isActive
+                            ? "text-orange-600 dark:text-orange-400 underline font-semibold"
+                            : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
+                        }`
+                    }
+                >
+                    Home
+                </NavLink>
                 <NavLink to="/pets" className={({ isActive }) =>
-                    `px-3 py-1 rounded-md transition ${isActive
-                        ? "text-orange-700 underline font-semibold"
-                        : "hover:text-orange-600"
+                    `px-3 py-1 rounded-md transition font-medium
+         ${isActive
+                        ? "text-orange-600 dark:text-orange-400 underline font-semibold"
+                        : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
                     }`
                 }>Pets & Supplies</NavLink>
-                <NavLink to="/about" className={({ isActive }) =>
-                    `px-3 py-1 rounded-md transition ${isActive
-                        ? "text-orange-700 underline font-semibold"
-                        : "hover:text-orange-600"
-                    }`
-                }>About Us</NavLink>
+
                 {
                     user && (
                         <>
                             <NavLink to="add-listing" className={({ isActive }) =>
-                                `px-3 py-1 rounded-md transition ${isActive
-                                    ? "text-orange-700 underline font-semibold"
-                                    : "hover:text-orange-600"
+                                `px-3 py-1 rounded-md transition font-medium
+         ${isActive
+                                    ? "text-orange-600 dark:text-orange-400 underline font-semibold"
+                                    : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
                                 }`
                             }>Add Listing</NavLink>
                             <NavLink to="my-listings" className={({ isActive }) =>
-                                `px-3 py-1 rounded-md transition ${isActive
-                                    ? "text-orange-700 underline font-semibold"
-                                    : "hover:text-orange-600"
+                                `px-3 py-1 rounded-md transition font-medium
+         ${isActive
+                                    ? "text-orange-600 dark:text-orange-400 underline font-semibold"
+                                    : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
                                 }`
                             }>My Listings</NavLink>
                             <NavLink to="my-orders" className={({ isActive }) =>
-                                `px-3 py-1 rounded-md transition ${isActive
-                                    ? "text-orange-700 underline font-semibold"
-                                    : "hover:text-orange-600"
+                                `px-3 py-1 rounded-md transition font-medium
+         ${isActive
+                                    ? "text-orange-600 dark:text-orange-400 underline font-semibold"
+                                    : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
                                 }`
                             }>My Orders</NavLink>
                         </>
                     )
                 }
+
+                <NavLink to="/about" className={({ isActive }) =>
+                    `px-3 py-1 rounded-md transition font-medium
+         ${isActive
+                        ? "text-orange-600 dark:text-orange-400 underline font-semibold"
+                        : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
+                    }`
+                }>About Us</NavLink>
 
             </div>
 
@@ -131,11 +144,11 @@ const Navbar = () => {
                                             {user.displayName || user.email}
                                         </span>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <span className="font-semibold">
                                             <Link to='/myprofile'>Update Profile</Link>
                                         </span>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <button onClick={handleLogout}>Logout</button>
                                     </li>

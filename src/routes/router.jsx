@@ -49,12 +49,12 @@ export const router = createBrowserRouter([
                     <ListingDetails></ListingDetails>
                 </PriviteRoute>
             },
-            {
-                path: '/myprofile',
-                element: <PriviteRoute>
-                    <MyProfile></MyProfile>
-                </PriviteRoute>
-            },
+            // {
+            //     path: '/myprofile',
+            //     element: <PriviteRoute>
+            //         <MyProfile></MyProfile>
+            //     </PriviteRoute>
+            // },
             {
                 path: '/add-listing',
                 element: <PriviteRoute>
@@ -62,13 +62,13 @@ export const router = createBrowserRouter([
                 </PriviteRoute>
 
             },
-            // {
-            //     path: '/my-listings',
-            //     element: <PriviteRoute>
-            //         <MyListings></MyListings>
-            //     </PriviteRoute>
+            {
+                path: '/my-listings',
+                element: <PriviteRoute>
+                    <MyListings></MyListings>
+                </PriviteRoute>
 
-            // },
+            },
             {
                 path: '/update-listings/:id',
                 element: <PriviteRoute>
@@ -76,13 +76,13 @@ export const router = createBrowserRouter([
                 </PriviteRoute>
 
             },
-            // {
-            //     path: '/my-orders',
-            //     element: <PriviteRoute>
-            //         <MyOrders></MyOrders>
-            //     </PriviteRoute>
+            {
+                path: '/my-orders',
+                element: <PriviteRoute>
+                    <MyOrders></MyOrders>
+                </PriviteRoute>
 
-            // }
+            }
         ]
     },
     {
@@ -98,7 +98,12 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/my-orders',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/myprofile',
+                element: <MyProfile></MyProfile>
             }
+
         ]
     },
     {

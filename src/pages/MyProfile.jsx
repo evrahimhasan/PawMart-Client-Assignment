@@ -22,6 +22,7 @@ const MyProfile = () => {
                 const update = { ...user, displayName: name, photoURL: photo };
                 setUser(update)
                 console.log(update)
+                e.target.reset()
             })
             .catch(error => {
                 console.log(error)
@@ -46,7 +47,7 @@ const MyProfile = () => {
                         </div>
 
 
-                        <button type='submit' className='btn mt-5 w-full rounded-xl bg-green-400 text-white'>Update Information</button>
+                        <button type='submit' className='btn mt-5 w-full rounded-xl bg-green-400 text-white'>Update Profile</button>
 
 
                     </div>

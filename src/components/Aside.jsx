@@ -94,6 +94,18 @@ const Aside = () => {
                             <MdOutlinePublishedWithChanges className="h-5 w-5" /> My Orders
                         </NavLink>
 
+                        <NavLink
+                            to="/dashboard/myprofile"
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                    ? "bg-white text-red-600 font-semibold shadow-md"
+                                    : "hover:bg-red-500 hover:bg-opacity-80"
+                                }`
+                            }
+                        >
+                            <MdOutlinePublishedWithChanges className="h-5 w-5" /> My Profile
+                        </NavLink>
+
 
                         {/* {role === "admin" && (
                             <NavLink
