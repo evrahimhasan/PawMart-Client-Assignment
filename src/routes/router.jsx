@@ -13,6 +13,7 @@ import MyListings from "../pages/MyListings";
 import UpdateListing from "../pages/UpdateListing";
 import MyOrders from "../pages/MyOrders";
 import About from "../pages/About";
+import DashBoardLayout from "../dashboardLayout/DashBoardLayout";
 
 
 
@@ -61,13 +62,13 @@ export const router = createBrowserRouter([
                 </PriviteRoute>
 
             },
-            {
-                path: '/my-listings',
-                element: <PriviteRoute>
-                    <MyListings></MyListings>
-                </PriviteRoute>
+            // {
+            //     path: '/my-listings',
+            //     element: <PriviteRoute>
+            //         <MyListings></MyListings>
+            //     </PriviteRoute>
 
-            },
+            // },
             {
                 path: '/update-listings/:id',
                 element: <PriviteRoute>
@@ -75,12 +76,28 @@ export const router = createBrowserRouter([
                 </PriviteRoute>
 
             },
-            {
-                path: '/my-orders',
-                element: <PriviteRoute>
-                    <MyOrders></MyOrders>
-                </PriviteRoute>
+            // {
+            //     path: '/my-orders',
+            //     element: <PriviteRoute>
+            //         <MyOrders></MyOrders>
+            //     </PriviteRoute>
 
+            // }
+        ]
+    },
+    {
+        path: "dashboard",
+        element: <PriviteRoute>
+            <DashBoardLayout></DashBoardLayout>
+        </PriviteRoute>,
+        children: [
+            {
+                path: '/dashboard/my-listings',
+                element: <MyListings></MyListings>
+            },
+            {
+                path: '/dashboard/my-orders',
+                element: <MyOrders></MyOrders>
             }
         ]
     },

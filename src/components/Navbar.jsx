@@ -101,40 +101,47 @@ const Navbar = () => {
                         <MdDarkMode />
                     </span>
                 </div>
+
                 {
                     user ? (
-                        <div className="dropdown dropdown-end">
-
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img
-                                        alt="User Avatar"
-                                        src={user.photoURL || 'https://img.icons8.com/?size=64&id=115318&format=png'}
-                                    />
-                                </div>
+                        <div className='flex gap-3 justify-center items-center'>
+                            <div>
+                                <Link to='/dashboard' className='btn bg-orange-600'>My Dashboard</Link>
                             </div>
 
+                            <div className="dropdown dropdown-end">
+
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img
+                                            alt="User Avatar"
+                                            src={user.photoURL || 'https://img.icons8.com/?size=64&id=115318&format=png'}
+                                        />
+                                    </div>
+                                </div>
 
 
-                            <ul
-                                tabIndex={0}
-                                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-                            >
-                                <li>
-                                    <span className="font-semibold">
-                                        {user.displayName || user.email}
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="font-semibold">
-                                        <Link to='/myprofile'>Update Profile</Link>
-                                    </span>
-                                </li>
-                                <li>
-                                    <button onClick={handleLogout}>Logout</button>
-                                </li>
-                            </ul>
 
+                                <ul
+                                    tabIndex={0}
+                                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                                >
+                                    <li>
+                                        <span className="font-semibold">
+                                            {user.displayName || user.email}
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="font-semibold">
+                                            <Link to='/myprofile'>Update Profile</Link>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <button onClick={handleLogout}>Logout</button>
+                                    </li>
+                                </ul>
+
+                            </div>
                         </div>
                     ) : (
                         <div className='flex gap-3'>
