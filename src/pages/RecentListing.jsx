@@ -21,7 +21,7 @@ const RecentListing = () => {
     return (
         <section className="text-center">
             <h2 className="text-3xl font-bold text-orange-600 mb-6">Recent Listings</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {listings.map((listing) => (
                     <div
                         key={listing._id}

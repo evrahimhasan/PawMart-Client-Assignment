@@ -54,7 +54,7 @@ const Pets = () => {
                 <h2 className="text-3xl font-bold mb-8 text-center">
                     Pets & <span className="text-orange-600">Supplies Page</span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {filteredListings.map((listing) => (
                         <div
                             key={listing._id}
