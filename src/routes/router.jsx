@@ -12,6 +12,7 @@ import ListingDetails from "../pages/ListingDetails";
 import MyListings from "../pages/MyListings";
 import UpdateListing from "../pages/UpdateListing";
 import MyOrders from "../pages/MyOrders";
+import About from "../pages/About";
 
 
 
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
             {
                 path: '/pets',
                 element: <Pets></Pets>
+            },
+            {
+                path: '/about',
+                element: <About></About>
             },
             {
                 path: '/login',

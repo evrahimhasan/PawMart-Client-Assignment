@@ -52,6 +52,12 @@ const Navbar = () => {
                         : "hover:text-orange-600"
                     }`
                 }>Pets & Supplies</NavLink>
+                <NavLink to="/about" className={({ isActive }) =>
+                    `px-3 py-1 rounded-md transition ${isActive
+                        ? "text-orange-700 underline font-semibold"
+                        : "hover:text-orange-600"
+                    }`
+                }>About Us</NavLink>
                 {
                     user && (
                         <>
