@@ -101,7 +101,7 @@ const Navbar = () => {
             <div className='flex justify-center items-center gap-4'>
                 {/* Theme Toggle */}
                 <div className="flex items-center gap-2">
-                    <span>
+                    <span className="text-yellow-500">
                         <MdLightMode />
                     </span>
                     <input
@@ -110,7 +110,7 @@ const Navbar = () => {
                         checked={theme === "dark"}
                         className="toggle"
                     />
-                    <span>
+                    <span className="text-gray-500">
                         <MdDarkMode />
                     </span>
                 </div>

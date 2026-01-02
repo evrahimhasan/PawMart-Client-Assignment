@@ -11,7 +11,7 @@ const Banner = () => {
                 <div id="slide1" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co.com/B583W2y1/pets.jpg"
-                        className="w-full h-[380px] object-cover"
+                        className="w-full h-[500px] object-cover"
                     />
 
 
@@ -34,7 +34,7 @@ const Banner = () => {
                 <div id="slide2" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co.com/PzgFDzR9/adopt-Pets.jpg"
-                        className="w-full h-[380px] object-cover"
+                        className="w-full h-[500px] object-cover"
                     />
 
                     <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
@@ -56,7 +56,7 @@ const Banner = () => {
                 <div id="slide3" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co.com/Xr9gRxpB/happy-Owners.jpg"
-                        className="w-full h-[380px] object-cover"
+                        className="w-full h-[500px] object-cover"
                     />
 
                     <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
