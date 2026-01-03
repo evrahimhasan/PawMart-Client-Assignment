@@ -6,6 +6,7 @@ import RecentListing from './RecentListing';
 import Categories from '../components/Categories';
 import Statistics from '../components/Statistics';
 import HowItWorks from '../components/HowItWorks';
+import FAQ from '../components/FAQ';
 
 const Home = () => {
     return (
@@ -24,6 +25,8 @@ const Home = () => {
                 <Statistics></Statistics>
 
                 <HowItWorks></HowItWorks>
+
+                <FAQ></FAQ>
 
             </div>
         </>
