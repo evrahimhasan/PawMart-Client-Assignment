@@ -7,7 +7,7 @@ import { FiHome, FiLogOut, FiSettings, FiUsers } from 'react-icons/fi';
 import { NavLink } from 'react-router';
 
 const Aside = () => {
-    const { role, logOut } = use(AuthContext)
+    const { logOut } = use(AuthContext)
     const [open, setOpen] = useState(false);
 
     const handleLogout = () => {

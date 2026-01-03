@@ -33,7 +33,7 @@ const MyProfile = () => {
     return (
         <form onSubmit={hendleUpdate}>
             <div className='flex flex-col justify-center items-center shadow-2xl gap-5 mt-10'>
-                <div className='text-center p-5 text-black rounded-lg'>
+                <div className='text-center p-5 text-gray-600 dark:text-gray-200 rounded-lg'>
                     <img className='w-[100px] h-[100px] rounded-full mx-auto ' src={photoURL} alt="" />
                     <h2 className='text-2xl font-bold mt-5 '>{displayName}</h2>
                     <h2 className='text-xl font-semibold'>{email}</h2>
