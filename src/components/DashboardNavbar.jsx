@@ -60,13 +60,6 @@ const DashboardNavbar = () => {
                         : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
                     }`
                 }>My Profile</NavLink>
-                <NavLink to="/dashboard/my-orders" className={({ isActive }) =>
-                    `px-3 py-1 rounded-md transition font-medium
-                 ${isActive
-                        ? "text-orange-600 dark:text-orange-400 underline font-semibold"
-                        : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
-                    }`
-                }>My Orders</NavLink>
 
             </div>
 
