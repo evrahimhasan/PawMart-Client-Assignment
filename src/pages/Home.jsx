@@ -7,6 +7,7 @@ import Categories from '../components/Categories';
 import Statistics from '../components/Statistics';
 import HowItWorks from '../components/HowItWorks';
 import FAQ from '../components/FAQ';
+import CTA from '../components/CTA';
 
 const Home = () => {
     return (
@@ -27,6 +28,8 @@ const Home = () => {
                 <HowItWorks></HowItWorks>
 
                 <FAQ></FAQ>
+
+                <CTA></CTA>
 
             </div>
         </>
