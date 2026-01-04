@@ -14,6 +14,7 @@ import UpdateListing from "../pages/UpdateListing";
 import MyOrders from "../pages/MyOrders";
 import About from "../pages/About";
 import DashBoardLayout from "../dashboardLayout/DashBoardLayout";
+import DashboardCharts from "../components/DashboardCharts";
 
 
 
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
             <DashBoardLayout></DashBoardLayout>
         </PriviteRoute>,
         children: [
+            {
+                path: '/dashboard',
+                element: <DashboardCharts></DashboardCharts>
+            },
             {
                 path: '/dashboard/my-listings',
                 element: <MyListings></MyListings>
