@@ -31,12 +31,10 @@ const ListingDetails = () => {
 
     const handleAdoptClick = () => {
         if (!user) {
-            // ইউজার লগইন না থাকলে login page এ পাঠাও
             navigate("/login");
             return;
         }
 
-        // ইউজার লগইন থাকলে modal দেখাও
         document.getElementById('my_modal_3').showModal();
     };
 

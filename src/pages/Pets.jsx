@@ -167,7 +167,7 @@ const Pets = () => {
                     <button
                         disabled={page === 1}
                         onClick={() => setPage(page - 1)}
-                        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+                        className="px-3 py-1 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
                     >
                         Prev
                     </button>
@@ -176,7 +176,11 @@ const Pets = () => {
                         <button
                             key={num}
                             onClick={() => setPage(num)}
-                            className={`px-3 py-1 rounded ${page === num ? 'bg-orange-600 text-white' : 'bg-gray-200'}`}
+                            className={`px-3 py-1 rounded
+        ${page === num
+                                    ? 'bg-orange-600 text-white'
+                                    : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
+                                }`}
                         >
                             {num}
                         </button>
@@ -185,7 +189,7 @@ const Pets = () => {
                     <button
                         disabled={page === totalPages}
                         onClick={() => setPage(page + 1)}
-                        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+                        className="px-3 py-1 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
                     >
                         Next
                     </button>
