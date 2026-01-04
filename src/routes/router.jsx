@@ -46,9 +46,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/pets-details/:id',
-                element: <PriviteRoute>
-                    <ListingDetails></ListingDetails>
-                </PriviteRoute>
+                element: <ListingDetails></ListingDetails>
+
             },
             // {
             //     path: '/myprofile',

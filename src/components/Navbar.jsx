@@ -48,10 +48,10 @@ const Navbar = () => {
             <div className="flex justify-between items-center px-4 py-3">
 
                 {/* Logo */}
-                <div className="flex items-center gap-2">
+                <Link to='/' className="flex items-center gap-2">
                     <FaPaw className="text-3xl text-yellow-400" />
                     <h2 className="text-2xl text-orange-900 font-bold">PawMart</h2>
-                </div>
+                </Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-5 items-center">

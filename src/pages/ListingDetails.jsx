@@ -27,6 +27,20 @@ const ListingDetails = () => {
             })
     }, [id]);
 
+
+
+    const handleAdoptClick = () => {
+        if (!user) {
+            // ইউজার লগইন না থাকলে login page এ পাঠাও
+            navigate("/login");
+            return;
+        }
+
+        // ইউজার লগইন থাকলে modal দেখাও
+        document.getElementById('my_modal_3').showModal();
+    };
+
+
     const handleOrder = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -112,8 +126,12 @@ const ListingDetails = () => {
                 </div>
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 <div className="lg:mt-6 lg:col-span-2 lg:flex lg:justify-center">
-                    <button className="btn bg-gradient-to-r from-orange-600 to-orange-800 py-3 px-4 text-[16px] text-white"
-                        onClick={() => document.getElementById('my_modal_3').showModal()}>Adopt / Order Now</button>
+                    <button
+                        className="btn bg-gradient-to-r from-orange-600 to-orange-800 py-3 px-4 text-[16px] text-white"
+                        onClick={handleAdoptClick}
+                    >
+                        Adopt / Order Now
+                    </button>
                 </div>
                 <dialog id="my_modal_3" className="modal">
                     <div className="modal-box">
@@ -129,7 +147,7 @@ const ListingDetails = () => {
                             <label className="label">Buyer Name</label>
                             <input
                                 readOnly
-                                defaultValue={user.displayName}
+                                defaultValue={user?.displayName || ""}
                                 type="text"
                                 name="buyerName"
                                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
@@ -139,7 +157,7 @@ const ListingDetails = () => {
                             <label className="label">Email</label>
                             <input
                                 readOnly
-                                defaultValue={user.email}
+                                defaultValue={user?.email || ""}
                                 type="email"
                                 name="email"
                                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
