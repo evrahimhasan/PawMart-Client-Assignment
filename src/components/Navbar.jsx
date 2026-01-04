@@ -74,14 +74,14 @@ const Navbar = () => {
 
                     {/* Theme Toggle */}
                     <div className="hidden md:flex items-center gap-2">
-                        <MdLightMode />
+                        <MdLightMode className='text-yellow-500'/>
                         <input
                             type="checkbox"
                             checked={theme === "dark"}
                             onChange={(e) => handleTheme(e.target.checked)}
                             className="toggle"
                         />
-                        <MdDarkMode />
+                        <MdDarkMode className='text-gray-500'/>
                     </div>
 
                     {/* Desktop User */}
@@ -112,16 +112,16 @@ const Navbar = () => {
                     )}
 
                     {/* Mobile Hamburger */}
-                    <Link to="/dashboard" className="btn bg-orange-600 text-white">
-                        Dashboard
-                    </Link>
 
-                    <button
+                    <div
                         className="md:hidden btn btn-ghost text-2xl text-gray-800 dark:text-gray-100"
                         onClick={() => setIsOpen(!isOpen)}
                     >
+                        <Link to="/dashboard" className="btn bg-orange-600 text-white">
+                            Dashboard
+                        </Link>
                         ☰
-                    </button>
+                    </div>
                 </div>
             </div>
 
@@ -143,14 +143,14 @@ const Navbar = () => {
 
                     {/* Mobile Theme */}
                     <div className="flex items-center gap-2 mt-3">
-                        <MdLightMode />
+                        <MdLightMode className='text-yellow-500'/>
                         <input
                             type="checkbox"
                             checked={theme === "dark"}
                             onChange={(e) => handleTheme(e.target.checked)}
                             className="toggle"
                         />
-                        <MdDarkMode />
+                        <MdDarkMode className='text-gray-500'/>
                     </div>
 
                     {!user ? (
